@@ -30,7 +30,21 @@
 # print(summ)
 
 
+#4
 
+
+
+
+
+
+
+
+
+# #5
+# import random as rn
+# list1 = list(input().split(' '))
+# rn.shuffle(list1)
+# print(*list1)
 
 
 
