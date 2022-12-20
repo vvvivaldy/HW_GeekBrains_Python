@@ -32,6 +32,21 @@
 
 #4
 
+# n = int(input())
+# arr: int = []
+# for i in range(-n,n+1):
+#     arr.append(i)
+# if n<2:
+#     print('Число слишком короткое!')
+#     exit()
+# else:
+#     print(*arr)
+#     summ = 0
+#     with open('file(hw_2).txt','r') as data:
+#         for i in data:
+#             j = int(i)
+#             summ+=arr[j]
+#     print(summ)
 
 
 
@@ -45,14 +60,6 @@
 # list1 = list(input().split(' '))
 # rn.shuffle(list1)
 # print(*list1)
-
-
-
-
-
-
-
-
 
 
 
