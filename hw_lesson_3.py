@@ -47,6 +47,12 @@
 #5
 
 n = int(input())
+def fibonacci(n): # ф-ция чисел фибоначи
+    if n in (1, 2):
+        return 1
+    if n == 0:
+        return 0
+    return fibonacci(n - 1) + fibonacci(n - 2)
 lst = [fibonacci(i) for i in range(0, n+1)] # создаем список из чисел фибоначи
 lst = lst[::-1] + lst[1:] # создается список из самого себя(сначала с последнего до первого эл)
                             # потом со второго(т.к. индексация с 0) по последний
@@ -57,11 +63,5 @@ for i in range(len(lst)): #добавляем в нужные места ' - '
 
 print(lst, '\n')
 
-def fibonacci(n): # ф-ция чисел фибоначи
-    if n in (1, 2):
-        return 1
-    if n == 0:
-        return 0
-    return fibonacci(n - 1) + fibonacci(n - 2)
 
 
