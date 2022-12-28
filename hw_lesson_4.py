@@ -91,59 +91,104 @@
 
 #5
 
-def Open():
-    with open('polynomial_1.txt(hw_4)','r') as data:
-        poly1 = data.read()
-    with open('polynomial_2.txt(hw_4)','r') as data:
-        poly2 = data.read()
-    return poly1, poly2
-poly1, poly2 = Open()
+# считываем многочлены
+# def Open():
+#     with open('polynomial_1.txt(hw_4)','r') as data:
+#         poly1 = data.read()
+#     with open('polynomial_2.txt(hw_4)','r') as data:
+#         poly2 = data.read()
+#     return poly1, poly2
 
 
-def Create(poly):
-     with open('polynomial_SUMM.txt(hw_4)','w') as data:
-        data.write(poly)
+# # присваивыем считанные многочлены переменным
+# poly1, poly2 = Open()
 
 
-def summ(poly1,poly2):
-    poly1 = poly1.replace(' = 0','')
-    poly1 = poly1.replace('x**', ' ')
-    poly1 = poly1.replace(' + ',' ')
-    poly1 = poly1.replace('x','1')
-    poly1 = poly1.split()
-    poly1 = list(map(int,poly1))
-
-    poly2 = poly2.replace(' = 0','')
-    poly2 = poly2.replace('x**', ' ')
-    poly2 = poly2.replace(' + ',' ')
-    poly2 = poly2.replace('x','1')
-    poly2 = poly2.split()
-    poly2 = list(map(int,poly2))
-
-#из двух списков,где четные индексы - коэфиценты, нечетные - степени
-#пытыюсь сложить коэфиценты двух списков опираясь на ключи
-#надо каждый список рассматривать отдельно,чтобы сравнивать их степени
-
-    if len(poly1)>len(poly2): 
-        summ = [0] * len(poly1)
-        for i in range(0,len(poly1)-2,2):
-            if poly1[i+1]==poly2[i+1]:
-                summ[-(i+1)] += poly1[i]+poly2[i]
-            else:
-                summ[-(i+1)] += poly1[i]
-    else:
-        summ = [0] * len(poly2)
-        for i in range(0,len(poly2)-2,2):
-            if poly1[i+1]==poly2[i+1]:
-                summ[-(i+1)] += poly1[i]+poly2[i]
-            else:
-                summ[-(i+1)] += poly2[i]
+# # создаем файл для вывода 
+# def Create(poly):
+#      with open('polynomial_SUMM.txt(hw_4)','w') as data:
+#         data.write(poly)
 
 
-    print(poly1)
-    print(poly2)
-    return summ
-print(summ(poly1,poly2))
+# # обрабатываем многочлен в вид списка,удаляя лишние символы
+# def convert(poly):
+#     poly = poly.replace(' = 0','')
+#     poly = poly.replace('x**', ' ')
+#     poly = poly.replace(' + ',' ')
+#     poly = poly.replace('x','1')
+#     poly = poly.split()
+#     poly = list(map(int,poly))
+#     if len(poly)%2==0:
+#         temp = poly[-1]
+#         poly[-1] = poly[-2]
+#         poly[-2] = temp
+#     return poly
+
+
+# # конвертируем обработанный в список многочлен в словарь
+# def convert_to_dict(poly):
+#     dict1 = {}
+#     if len(poly)%2==0:
+#         for i in range(0,len(poly),2):
+#             dict1[poly[i+1]] = poly[i]
+#     else:
+#         for i in range(0,len(poly),2):
+#             dict1[poly[i+1]] = poly[i]
+
+#     return dict1
+
+
+# # сумма многочленов
+# def summ (d1,d2): 
+#     summa = []
+#     if len(list(d1))>len(list(d2)): #проверка какой многочлен был больше(длиннее)
+#         for (k,v) in d1.items():
+#             for i in range(1,k+1):
+#                 if (k==i) and (k!=1) and ((k in d2)==True):
+#                     summa.append(v+d2[i])
+#                 elif k==1 and i==1:
+#                     summa.append(2)
+#                     summa.append(d1[1]+d2[1])
+#                 elif ((k in d2)==False):
+#                     summa.append(v)
+#                     break
+#     else:
+#         for (k,v) in d2.items():
+#             for i in range(1,k+1):
+#                 if (k==i) and (k!=1) and ((k in d1)==True):
+#                     summa.append(v+d1[i])
+#                 elif k==1 and i==1:
+#                     summa.append(2)
+#                     summa.append(d1[1]+d2[1])
+#                 elif ((k in d1)==False):
+#                     summa.append(v)
+#                     break
+#     return summa
+    
+
+
+# def outpoly(k): # собираем многочлен
+#     result = ''
+#     count = len(k)-1
+#     for i in range(count): 
+#         if count != 0 and count!=1:
+#             k[i]= f'{str(k[i])}x**{count}'
+#         elif count==1:
+#             k[i]=f'{str(k[i])}x'
+#         else:
+#             k[i] = str(k[i])
+#         count-=1
+        
+#     for i in range(len(k)):
+#         if i != 0:
+#             result+=f' + {k[i]}'
+#         else:
+#             result+=k[i]
+#     result+=' = 0'
+#     return result
+
+# Create(outpoly(summ((convert_to_dict(convert(poly1))),(convert_to_dict(convert(poly2))))))
+
 
 
 
