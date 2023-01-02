@@ -65,7 +65,7 @@
 #             res.append(f'{str(koef[i])}x**{str(i)}')
         
 #         elif (koef[i]!=0) and (i==1):
-#             res.append('x')
+#             res.append(f'{koef[i]}x')
         
 #         elif (koef[i]!=0) and (i==0):
 #             res.append(str(koef[i]))
@@ -79,7 +79,9 @@
 
 #     if result[0]==' ':
 #         result = result.replace(' + ','',1) #удаляем лишний плюс если он есть
-
+#     res = list(result)
+#     res.insert(0,' ')
+#     result = ''.join(res)
 #     return result
     
 # create(outpoly(k,rn(k)),outpoly(k,rn(k)))
