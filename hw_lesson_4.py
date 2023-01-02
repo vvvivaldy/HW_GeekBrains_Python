@@ -88,10 +88,9 @@
 
 
 
+# #5
 
-#5
-
-# считываем многочлены
+# #считываем многочлены
 # def Open():
 #     with open('polynomial_1.txt(hw_4)','r') as data:
 #         poly1 = data.read()
@@ -166,8 +165,8 @@
 #     return summa
     
 
-
-# def outpoly(k): # собираем многочлен
+# #собираем многочлен
+# def outpoly(k):
 #     result = ''
 #     count = len(k)-1
 #     for i in range(count): 
