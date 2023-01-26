@@ -5,17 +5,21 @@ def to_str():
     return string
 
 def open_file(string):
-    with open('справочник.txt','a') as data:
+    with open('hw_lesson_7/справочник.txt','a') as data:
         data.write(string + '\n')
 
 def add_id():
     global processed_line
-    data = open('справочник.txt','r')
-    last = data.readlines()
+    data = open('hw_lesson_7/справочник.txt','r')
+    last = data.readlines()[-1]
+    print(last)
     data.close
-    indexes = [i for i,c in enumerate(last) if c==';']
+    indexes = [i for (i,c) in enumerate(last) if c==';']
+    print(indexes)
     if len(indexes)>0:
-        processed_line.append(f';{indexes[-1]}')
+        processed_line.append(f';{str(int(last[indexes[-1]+1::])+1)}') 
+        # находится последний символ ; и к значению 
+        # после него прибавляется 1,затем снова преобразуется в строку
     else:
         processed_line.append(';1')
             
@@ -27,8 +31,8 @@ def operation():
 
 
 def create_file():
-    with open('справочник.txt','w') as data:
-        data.write('Добро пожаловать в телефонный справочник!\n')
+    with open('hw_lesson_7/справочник.txt','w') as data:
+        data.write('Welcome to telephone directory!\n\n')
 
 
 

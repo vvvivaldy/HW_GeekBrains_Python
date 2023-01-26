@@ -1,14 +1,16 @@
 from input import *
 import controller as c
 import output
+import os
 
 op = c.operation()
-c.create_file()
+if os.path.isfile('hw_lesson_7/справочник.txt') == False:
+    c.create_file()
 if op:
     while True:
-        print('Чтобы выйти из режима записи, введите "выход"')
+        print('Чтобы выйти из режима записи, введите "exit"')
         fill()
-        if processed_line[0] == 'выход':
+        if processed_line[0] == 'exit':
             break
         else:
             c.add_id()
