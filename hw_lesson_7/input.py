@@ -10,9 +10,7 @@ def fill():
             processed_line.append(line[i])
     
 
-def helper():
-    global processed_line
-    return processed_line
+
     
             
             

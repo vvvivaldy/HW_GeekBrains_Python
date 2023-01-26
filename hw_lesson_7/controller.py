@@ -12,10 +12,8 @@ def add_id():
     global processed_line
     data = open('hw_lesson_7/справочник.txt','r')
     last = data.readlines()[-1]
-    print(last)
     data.close
     indexes = [i for (i,c) in enumerate(last) if c==';']
-    print(indexes)
     if len(indexes)>0:
         processed_line.append(f';{str(int(last[indexes[-1]+1::])+1)}') 
         # находится последний символ ; и к значению 
