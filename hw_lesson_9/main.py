@@ -49,7 +49,7 @@ def game(message):
             bot.send_message(message.chat.id,f'Я взял {move}\nОсталось конфет {candy}')
             bot.send_message(message.chat.id,f'Игра окончена! Победитель: Бот')
             return
-        bot.send_message(message.chat.id,f'Я взял {move}\nОсталось конфет {candy}\nТеперь твой ход!\nНажми кнопку')
+        bot.send_message(message.chat.id,f'Я взял {move}\nОсталось конфет {candy}\nТеперь твой ход!')
         step+=1
         button(message)
 
