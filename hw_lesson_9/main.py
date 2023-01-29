@@ -89,10 +89,12 @@ def restart(message):
     global candy
     global move
     global starter
+    global winner
     step = randint(1,2) 
     candy = 221
     move = randint(1,28)
     starter = 0
+    winner = None
     game(message)
 
 @bot.message_handler(commands=['Закончить'])
@@ -101,10 +103,12 @@ def end(message):
     global candy
     global move
     global starter
+    global winner
     step = randint(1,2) 
     candy = 221
     move = randint(1,28)
     starter = 0
+    winner = None
     bot.send_message(message.chat.id,'Игра окончена!')
 
 
