@@ -1,8 +1,6 @@
 #1
 # day = int(input("Введите день недели: "))
 # print(day==6 or day==7)
-
-
 #2
 # print ("x y z -> result")
 # for x in range(2):
