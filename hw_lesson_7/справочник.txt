@@ -3,3 +3,5 @@ Welcome to telephone directory!
 nikita;gut;23456;qwerty;1
 marina;gut;34567;qwerty;2
 rb;wiuec;ubegc;iubew;3
+влад;семкин;3456782;лох;4
+vlad;semkin;5672930431;loh;5
