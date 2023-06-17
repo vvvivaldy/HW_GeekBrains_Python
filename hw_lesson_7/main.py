@@ -4,7 +4,7 @@ import output
 import os
 
 op = c.operation()
-if os.path.isfile('hw_lesson_7/справочник.txt') == False:
+if os.path.isfile('d:/1_GoGoCode/GoGoPython/HW_Python_GeekBrains/hw_lesson_7/справочник.txt') == False:
     c.create_file()
 if op:
     while True:

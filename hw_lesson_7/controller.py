@@ -5,12 +5,12 @@ def to_str():
     return string
 
 def open_file(string):
-    with open('hw_lesson_7/справочник.txt','a') as data:
+    with open('d:/1_GoGoCode/GoGoPython/HW_Python_GeekBrains/hw_lesson_7/справочник.txt','a') as data:
         data.write(string + '\n')
 
 def add_id():
     global processed_line
-    data = open('hw_lesson_7/справочник.txt','r')
+    data = open('d:/1_GoGoCode/GoGoPython/HW_Python_GeekBrains/hw_lesson_7/справочник.txt','r')
     last = data.readlines()[-1]
     data.close
     indexes = [i for (i,c) in enumerate(last) if c==';']
@@ -29,7 +29,7 @@ def operation():
 
 
 def create_file():
-    with open('hw_lesson_7/справочник.txt','w') as data:
+    with open('d:/1_GoGoCode/GoGoPython/HW_Python_GeekBrains/hw_lesson_7/справочник.txt','w') as data:
         data.write('Welcome to telephone directory!\n\n')
 
 
